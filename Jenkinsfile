@@ -35,17 +35,18 @@ node {
     }
 
     
-    stage('download the kubectl') {
+    /*stage('download the kubectl') {
       sh "curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.7.3/bin/linux/amd64/kubectl"
       sh "chmod +x  kubectl"
-    }
+    }*/
     
-    stage('setup cluster') {
+    /*stage('setup cluster') {
       sh "./kubectl config set-cluster default-cluster --server=https://kubernetes.default.svc.cluster.local:5443 --certificate-authority=cacrt"
       sh "./kubectl config set-credentials default-admin --certificate-authority=cacrt --client-key=clientkey --client-certificate=clientcrt"
       sh "./kubectl config set-context default-context --cluster=default-cluster --user=default-admin"
       sh "./kubectl config set current-context default-context"
-    }
+    }*/
+    
     stage('deploy app') {
       sh "set +e ; ./kubectl delete -f rc.yaml ; exit 0"
       sh "sleep 10"
