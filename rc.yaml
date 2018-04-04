@@ -23,7 +23,7 @@ spec:
         imagePullPolicy: Always
         name: hellonode
         ports:
-        - containerPort: 80
+        - containerPort: 8000
           protocol: TCP
         resources: {}
         terminationMessagePath: /dev/termination-log
