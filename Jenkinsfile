@@ -41,8 +41,8 @@ node {
     }*/
     
     stage('setup cluster') {
-      sh "./kubectl config set-cluster default-cluster --server=https://kubernetes.default.svc.cluster.local:5443 --certificate-authority=cacrt"
-      sh "./kubectl config set-credentials default-admin --certificate-authority=cacrt --client-key=clientkey --client-certificate=clientcrt"
+      sh "./kubectl config set-cluster default-cluster --server=https://kubernetes.default.svc.cluster.local:5443 --certificate-authority=config/cacrt"
+      sh "./kubectl config set-credentials default-admin --certificate-authority=config/cacrt --client-key=config/clientkey --client-certificate=config/clientcrt"
       sh "./kubectl config set-context default-context --cluster=default-cluster --user=default-admin"
       sh "./kubectl config set current-context default-context"
     }
