@@ -34,11 +34,11 @@ node {
         }
     }
 
-    
+    /*
     stage('download the kubectl') {
       sh "curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.7.3/bin/linux/amd64/kubectl"
       sh "chmod +x  kubectl"
-    }
+    }*/
     
     stage('setup cluster') {
       sh "./kubectl config set-cluster default-cluster --server=https://kubernetes.default.svc.cluster.local:5443 --certificate-authority=cacrt"
