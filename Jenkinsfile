@@ -34,7 +34,8 @@ node {
         }
     }
 
-    
+
+    /*
     stage('download the kubectl') {
       sh "curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.7.3/bin/linux/amd64/kubectl"
       sh "chmod +x  kubectl"
@@ -53,5 +54,5 @@ node {
       sh "./kubectl create -f rc.yaml"
       sh "set +e ; ./kubectl create -f svc.yaml; exit 0"
     }
-    
+    */
 }
