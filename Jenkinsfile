@@ -33,8 +33,18 @@ node {
             app.push("latest")
         }
     }
+    
+    stage('deploy app') {    
+        withKubeConfig(caCertificate: '', credentialsId: 'das', serverUrl: 'https://kubernetes.default.svc.cluster.local:5443') {
+        // some block
+        sh 'kubectl delete -f rc.yaml ; exit 0'
+        sh 'sleep 10'
+        sh 'kubectl create -f rc.yaml'
+        sh 'kubectl create -f svc.yaml; exit 0'
+        }
+    }
 
-
+    /*
     stage('download the kubectl') {
       sh "curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.7.3/bin/linux/amd64/kubectl"
       sh "chmod +x  kubectl"
@@ -53,5 +63,6 @@ node {
       sh "./kubectl create -f rc.yaml"
       sh "set +e ; ./kubectl create -f svc.yaml; exit 0"
     }
+    */
     
 }
