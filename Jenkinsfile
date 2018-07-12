@@ -36,7 +36,7 @@ node {
     
     stage('deploy app') {    
         withKubeConfig(caCertificate: '', credentialsId: 'cce1686-secret', serverUrl: 'https://kubernetes.default.svc.cluster.local:5443') {
-        // someblock
+        // some block
         sh 'set +e; kubectl delete -f rc.yaml ; exit 0'
         sh 'sleep 10'
         sh 'kubectl create -f rc.yaml;'
