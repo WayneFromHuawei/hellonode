@@ -34,6 +34,7 @@ node {
         }
     }
     
+    
     /*
     stage('deploy app') {    
         withKubeConfig(caCertificate: '', credentialsId: 'cce1686-secret', serverUrl: 'https://kubernetes.default.svc.cluster.local:5443') {
