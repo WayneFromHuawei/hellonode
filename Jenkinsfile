@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("ocb0001686/hellonode")
+        app = docker.build("ocb0001835/hellonode")
     }
 
     stage('Test image') {
@@ -28,12 +28,12 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('https://90.84.44.40:443', 'cre_conn_prod1686') {
+        docker.withRegistry('https://90.84.44.40:443', 'conn_1835_private_registry') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
     }
-    
+    /*
     stage('deploy app') {    
         withKubeConfig(caCertificate: '', credentialsId: 'cce1686-secret', serverUrl: 'https://kubernetes.default.svc.cluster.local:5443') {
         // someblock
@@ -42,5 +42,5 @@ node {
         sh 'kubectl create -f rc.yaml;'
         sh 'set +e; kubectl create -f svc.yaml; exit 0'
         }
-    }
+    }*/
 }
