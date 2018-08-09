@@ -18,7 +18,7 @@ spec:
         name: hellonode
     spec:
       containers:
-        name: hellonode
+      - name: hellonode
         image: 90.84.44.40:443/ocb0001835/hellonode:latest
         imagePullPolicy: Always
         ports:
