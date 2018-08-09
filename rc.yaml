@@ -28,6 +28,4 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
-      imagePullSecrets:
-      - name: myregistry
       restartPolicy: Always
