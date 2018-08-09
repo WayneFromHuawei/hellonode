@@ -42,5 +42,5 @@ node {
         sh 'kubectl create -f rc.yaml;'
         sh 'set +e; kubectl create -f svc.yaml; exit 0'
         }
-    }*/
+    }
 }
