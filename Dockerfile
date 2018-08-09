@@ -2,7 +2,7 @@
 FROM node:7-onbuild
 
 # set maintainer
-LABEL maintainer "wayne.wan@huawei.com"
+LABEL maintainer "***@***.com"
 
 # set a health check
 HEALTHCHECK --interval=5s \
