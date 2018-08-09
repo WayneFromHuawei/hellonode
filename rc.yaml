@@ -18,7 +18,6 @@ spec:
         name: hellonode
     spec:
       containers:
-      - env:
         image: 90.84.44.40:443/ocb0001835/hellonode:latest
         imagePullPolicy: Always
         name: hellonode
