@@ -21,8 +21,6 @@ spec:
       - name: hellonode
         image: registry.eu-west-0.prod-cloud-ocb.orange-business.com/dafurepo/hellonode:latest
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regcred
         ports:
         - containerPort: 8000
           protocol: TCP
@@ -31,5 +29,5 @@ spec:
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       imagePullSecrets:
-      - name: myregistry
+      - name: regcred
       restartPolicy: Always
