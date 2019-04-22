@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: hellonode
-        image: registry.eu-west-0.prod-cloud-ocb.orange-business.com/dafurepo/hellonode:latest
+        image: 100.125.0.94:20202/dafurepo/hellonode:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
