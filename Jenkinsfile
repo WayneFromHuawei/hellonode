@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("dafu_repository/hellonode")
+        app = docker.build("dafurepo/hellonode")
     }
 
     stage('Test image') {
@@ -29,8 +29,7 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('http://registry.eu-west-0.prod-cloud-ocb.orange-business.com','swr_long_credential') {
-            /*app.push("${env.BUILD_NUMBER}")*/
-            app.push("1")
+            app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
     }
