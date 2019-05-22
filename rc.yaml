@@ -29,5 +29,5 @@ spec:
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       imagePullSecrets:
-      - name: regcred
+      - name: default-secret
       restartPolicy: Always
