@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("dafurepo/hellonode")
+        app = docker.build("OCB0001835/hellonode")
     }
 
     stage('Test image') {
